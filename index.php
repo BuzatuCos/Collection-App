@@ -16,5 +16,22 @@ function getCarsFromDb($db){
 }
 $db = dbConn();
 $result = getCarsFromDb($db);
+//create function will iterate  through my multidimensional array
+//extract the keys from the associative array
+//extract the value from each associative array
+//prepare the data to be output
 
+function extractDataForOutput($result)
+{
+    $output = '';
+    foreach ($result as $array) {
+        $key = array_keys($array);
+        $output .='<div class="rows">' . '<p class="brand">' . $key[0] . ' ' . $array[$key[0]] . '</p>' . '<p class="model">' . $key[1] . ' ' . $array[$key[1]] . '</p>' . ' ' . '<p class="year">' . $key[2] . ' ' . $array[$key[2]] . '</p>' . '</div>';
+    }
+    return $output;
+}
+
+$output = extractDataForOutput($result);
+echo $output;
+?>
 
