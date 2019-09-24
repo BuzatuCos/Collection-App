@@ -1,14 +1,14 @@
 <?php
 //create a function to connect to the database
 //add attribute that will allow to extract only associative arrays
-function dbConn(){
+function dbConn():PDO{
     $db = new PDO('mysql:host=db; dbname=cosminCollection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 //create a function to fetch data from database
 //after fetching the data we will obtain a multidimensional array with associative arrays
-function getCarsFromDb($db){
+function getCarsFromDb(PDO $db) :array {
     $query = $db->prepare("SELECT `Brand`,`Model`,`Year` FROM `Cars`;");
     $query->execute();
     $result = $query->fetchAll();
@@ -20,8 +20,7 @@ $result = getCarsFromDb($db);
 //extract the keys from the associative array
 //extract the value from each associative array
 //prepare the data to be output
-
-function extractDataForOutput($result)
+function extractDataForOutput(array $result) :string
 {
     $output = '';
     foreach ($result as $array) {
