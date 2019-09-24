@@ -1,7 +1,8 @@
 <?php
-//create a function to connect to the database
-//add attribute that will allow to extract only associative arrays
-/**
+
+/**create a function to connect to the database
+ * add attribute that will allow to extract only associative arrays
+ *
  * @return PDO the database connection
  */
 function dbConn():PDO{
@@ -9,9 +10,9 @@ function dbConn():PDO{
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
-//create a function to fetch data from database
-//after fetching the data we will obtain a multidimensional array with associative arrays
-/**
+/**create a function to fetch data from database
+ * after fetching the data we will obtain a multidimensional array with associative arrays
+ *
  * @param PDO $db the database
  *
  * @return array a multidemnsional array fetch from database
@@ -24,11 +25,12 @@ function getCarsFromDb(PDO $db) :array {
 }
 $db = dbConn();
 $result = getCarsFromDb($db);
-//create function will iterate  through my multidimensional array
-//extract the keys from the associative array
-//extract the value from each associative array
-//prepare the data to be output
-/**
+
+/**create function will iterate  through my multidimensional array
+ * extract the keys from the associative array
+ * extract the value from each associative array
+ * prepare the data to be output
+ *
  * @param array $result a multidimensional array generated from the database
  *
  * @return string extracting data from the array preparing for the html including div and p with different classes
