@@ -27,9 +27,9 @@ DROP TABLE IF EXISTS `Cars`;
 
 CREATE TABLE `Cars` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `Brand` varchar(20) DEFAULT NULL,
-  `Model` varchar(20) DEFAULT NULL,
-  `Year` year(4) DEFAULT NULL,
+  `Brand` varchar(255) NOT NULL,
+  `Model` varchar(255) NOT NULL,
+  `Year` year(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
