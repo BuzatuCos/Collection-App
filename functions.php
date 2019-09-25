@@ -37,10 +37,11 @@ function extractDataForOutput(array $result): string
 {
     $output = '';
     foreach ($result as $array) {
-        if(array_key_exists('Brand',$array) === false && array_key_exists('Model',$array) === false && array_key_exists('Year',$array) === false) {
+        if(array_key_exists('Brand',$array) === false || array_key_exists('Model',$array) === false || array_key_exists('Year',$array) === false) {
             return 'Error';
         }
         $output .= '<div class="rows">' . '<p class="brand">' . $array['Brand'] . '</p>' . '<p class="model">' . 'Model : ' . $array['Model'] . '</p>' . '<p class="year">' . 'Year : ' . $array['Year'] . '</p>' . '</div>';
         }
         return $output;
+
 }
