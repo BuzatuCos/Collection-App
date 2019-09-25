@@ -14,6 +14,10 @@ $output = extractDataForOutput($result);
 </head>
 <body>
     <h1>Car Collection</h1>
+    <div class="addCars">
+    <form action= "insertToDb.php">
+        <input  type="submit" value="Click here to add cars" />
+    </div>
     <section class="section">
         <?php echo $output; ?>
     </section>
