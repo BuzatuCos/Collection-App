@@ -17,7 +17,7 @@
     <div class="newModel">Model: <input type="text" placeholder="Enter the Model" name="Model" required></div>
     <div class="newYear">Year: <input type="text" placeholder="Enter the Year" name="Year" required></div>
         <div class="submitButton"><input type="submit"></div>
-        </fieldset>
+    </fieldset>
 </form>
 </body>
 </html>
