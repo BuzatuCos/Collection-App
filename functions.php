@@ -4,8 +4,7 @@
  *
  * @return PDO the database connection
  */
-function dbConn():PDO
-{
+function dbConn(): PDO {
     $db = new PDO('mysql:host=db; dbname=cosminCollection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
@@ -18,7 +17,7 @@ function dbConn():PDO
  *
  * @return array a multidemnsional array fetch from database
  */
-function getCarsFromDb(PDO $db) :array {
+function getCarsFromDb(PDO $db): array {
     $query = $db->prepare("SELECT `Brand`,`Model`,`Year` FROM `Cars`;");
     $query->execute();
     $result = $query->fetchAll();
@@ -34,12 +33,16 @@ function getCarsFromDb(PDO $db) :array {
  *
  * @return string extracting data from the array preparing for the html including div and p with different classes
  */
-function extractDataForOutput(array $result) :string
+function extractDataForOutput(array $result): string
 {
     $output = '';
     foreach ($result as $array) {
         $key = array_keys($array);
-        $output .='<div class="rows">' . '<p class="brand">' .  $array[$key[0]] . '</p>' . '<p class="model">' . $key[1] . ' : ' . $array[$key[1]] . '</p>' .  '<p class="year">' . $key[2] . ' : ' . $array[$key[2]] . '</p>' . '</div>';
-    }
-    return $output;
+        if($key[0] !== 'Brand'){
+            return 'Error';
+        }
+        $output .= '<div class="rows">' . '<p class="brand">' . $array[$key[0]] . '</p>' . '<p class="model">' . $key[1] . ' : ' . $array[$key[1]] . '</p>' . '<p class="year">' . $key[2] . ' : ' . $array[$key[2]] . '</p>' . '</div>';
+
+        }
+        return $output;
 }
