@@ -49,12 +49,6 @@ function extractDataForOutput(array $result): string
 /**
  * @param $validation  input from the user through the post method
  *
- * trim() function removes extra spaces.
- *
- * stripslashes function removes backslashes
- *
- * htmlspecialchars — Convert special characters to HTML entities prevents Cross-Site Scripting (abbreviated as XSS)
- *
  * @return $validation it validates the data from the input
  */
 function validation(string $data) :string
