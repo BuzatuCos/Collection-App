@@ -19,9 +19,9 @@ input[type="text"]
 input[type=submit] {
     width: 8rem;  height: 8rem;
 }
-
-a{
-    margin: 0 auto;
+.goBackCars{
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .newBrand {
