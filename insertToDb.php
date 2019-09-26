@@ -40,7 +40,9 @@ if (isset($newBrand) && isset($newModel) && isset($newYear) ){
     <div class="newYear">Year: <input type="text" placeholder="Enter the Year" name="Year" required></div>
         <div class="submitButton"><input type="submit"></div>
     </fieldset>
-    <a href="index.php">Home</a>
+    <div class="goBackCars">
+        <form action= "index.php">
+            <input  type="submit" value="To car collection" />
 </form>
 </body>
 </html>
