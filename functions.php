@@ -45,3 +45,43 @@ function extractDataForOutput(array $result): string
         return $output;
 
 }
+
+/**
+ * @param $validation  input from the user through the post method
+ *
+ * trim() function removes extra spaces.
+ *
+ * stripslashes function removes backslashes
+ *
+ * htmlspecialchars — Convert special characters to HTML entities prevents Cross-Site Scripting (abbreviated as XSS)
+ *
+ * @return $validation it validates the data from the input
+ */
+function validation(string $data) :string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+/**
+ * @param string $brand Brand input from the user
+ *
+ * @param string $model Model input from the user
+ *
+ * @param string $year Year input from the user
+ *
+ * @param PDO $db Data base connection
+ *
+ * @return bool to execute the new input  into the database used Binding parameters for sanitisation purposes
+ *
+ */
+function addNew(string $brand , string $model , string $year, PDO $db) {
+    $query = $db->prepare("INSERT INTO `Cars` (`Brand`, `Model` , `Year`) VALUES (:brand, :model , :year)");
+   $query->bindParam(':brand', $brand, PDO::PARAM_STR, 255);
+    $query->bindParam(':model', $model, PDO::PARAM_STR, 255);
+    $query->bindParam(':year', $year, PDO::PARAM_STR, 4);
+    $var =  $query->execute();
+    return $var;
+}
