@@ -1,0 +1,49 @@
+html {
+    font-size: 15px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+input[type="text"]
+{
+    font-size:1.5rem;
+}
+
+input[type=submit] {
+    width: 8rem;  height: 8rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.newBrand {
+    font-size:1.5rem;
+     text-align: center;
+     padding-bottom: 2rem;
+ }
+
+.newModel {
+    font-size:1.5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.newYear {
+    font-size:1.5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.submitButton {
+    font-size:1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}

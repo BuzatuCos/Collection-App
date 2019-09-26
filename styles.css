@@ -13,12 +13,16 @@ h1 {
     text-align: center;
 }
 
+.addCars {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 .section {
     width: 1200px;
     overflow: auto;
     margin: 0 auto;
 }
-
 
 .rows {
     width: 30%;
