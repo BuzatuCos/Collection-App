@@ -1,5 +1,22 @@
 <?php
-
+$newBrand = '';
+$newModel = '';
+$newYear = '';
+if (!empty($_POST['Brand']) && strlen( $_POST[ 'Brand' ] ) <= 255 ) && is_string($_POST[ 'Brand' ] ) {
+    $newBrand =  validation($_POST['Brand']);
+    }else{
+    echo 'Your format is not accepted';
+}
+if (!empty($_POST['Model'])&& strlen( $_POST[ 'Model' ] ) <= 255 ) && is_string($_POST[ 'Model' ] )) {
+    $newModel = validation($_POST['Model']);
+    }else{
+    echo 'Your format is not accepted';
+}
+if (!empty($_POST['Year'])&& strlen( $_POST[ 'Year' ] ) === 4 ) && is_int($_POST[ 'Brand' ] )) {
+    $newYear = validation($_POST['Year']);
+}else{
+    echo 'Your format is not accepted';
+}
 ?>
 
 <!DOCTYPE html>
