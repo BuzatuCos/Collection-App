@@ -19,9 +19,10 @@ input[type="text"]
 input[type=submit] {
     width: 8rem;  height: 8rem;
 }
-.goBackCars{
+
+p {
     text-align: center;
-    margin-top: 2rem;
+    font-size: 1.5rem;
 }
 
 .newBrand {
@@ -44,5 +45,5 @@ input[type=submit] {
 .submitButton {
     font-size:1.5rem;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
